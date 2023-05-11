@@ -32,7 +32,7 @@ function App() {
     console.log("All tasks");
   };
   const handleActiveClick = () => {
-    console.log("all Active tasks");
+    console.log("all Active tasks swiching");
   };
   const handleCompletedClick = () => {
     console.log("all completed tasks");
