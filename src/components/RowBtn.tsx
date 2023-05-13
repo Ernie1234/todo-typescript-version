@@ -10,15 +10,15 @@ const RowBtnStyle = styled.div`
 `;
 
 type Props = {
-  handleAllClick: () => void;
-  handleActiveClick: () => void;
-  handleCompletedClick: () => void;
+  handleALL: () => void;
+  handleActive: () => void;
+  handleComplete: () => void;
 };
 
 const RowBtn: React.FC<Props> = ({
-  handleAllClick,
-  handleActiveClick,
-  handleCompletedClick,
+  handleALL,
+  handleActive,
+  handleComplete,
 }) => {
   return (
     <RowBtnStyle>
@@ -26,21 +26,21 @@ const RowBtn: React.FC<Props> = ({
         variant="outlined"
         btnType="button"
         margin
-        onClick={handleAllClick}
+        onClick={handleALL}
         btnText="All"
       />
       <Button
         variant="outlined"
         btnType="button"
         margin
-        onClick={handleActiveClick}
+        onClick={handleActive}
         btnText="Active"
       />
       <Button
         btnType="button"
         variant="outlined"
         margin
-        onClick={handleCompletedClick}
+        onClick={handleComplete}
         btnText="Completed"
       />
     </RowBtnStyle>

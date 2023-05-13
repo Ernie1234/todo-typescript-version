@@ -15,7 +15,9 @@ function index({ handleAddClick, input, setInput }: Props) {
           setInput(e.target.value)
         }
       />
-      <button type="submit">add task</button>
+      <button type="submit" className="btn__add-task">
+        add task
+      </button>
       {/* <Button
         btnType="submit"
         btnText="Button"

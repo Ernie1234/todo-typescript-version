@@ -18,3 +18,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.btn__add-task {
+  margin: 1rem 0;
+  width: 100%;
+  padding: 0.8rem 1.8rem;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  border: 1px solid transparent;
+  color: #f2f2f2;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.btn__add-task:hover {
+  border-color: #646cff;
+  background-color: transparent;
+  color: #646cff;
+}
