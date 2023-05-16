@@ -7,10 +7,9 @@ import { Container, Section, Wrapper } from "./styles/App.style";
 import { Todo } from "./interface";
 
 function App() {
-  const [todos, setTodos] = useState<Todo[] | []>((): Todo[] | [] => {
-    const savedData = localStorage.getItem("tasks");
-    return savedData ? JSON.parse(savedData) : [];
-  });
+  const [todos, setTodos] = useState<Todo[] | []>([
+    { id: 1, title: "school", isCompleted: false },
+  ]);
   const [input, setInput] = useState<string>("");
   // STATES TO TRACK THE ROW BTN TOGGLING
   const [all, setAll] = useState(true);
@@ -71,8 +70,8 @@ function App() {
     return Math.floor(Math.random() * 999999999999999);
   };
   //INPUT SUBMIT HANDLER
-  const handleAddClick = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
+  const handleAddClick = (event: React.FormEvent<HTMLInputElement>) => {
+    event.preventDefault();
     if (input === "" || null) return;
     setTodos([...todos, { id: randNum(), title: input, isCompleted: false }]);
     setInput("");

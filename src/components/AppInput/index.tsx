@@ -12,7 +12,7 @@ function index({ handleAddClick, input, setInput }: Props) {
       <AppInput
         value={input}
         type="text"
-        onChange={(e) => setInput(e.currentTarget.value)}
+        onChange={(e) => setInput(e.target.value)}
       />
       <button type="submit" className="btn__add-task">
         add task
