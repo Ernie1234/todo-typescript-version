@@ -11,20 +11,12 @@ function index({ handleAddClick, input, setInput }: Props) {
     <AppForm onSubmit={() => handleAddClick()}>
       <AppInput
         value={input}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setInput(e.target.value)
-        }
+        type="text"
+        onChange={(e) => setInput(e.currentTarget.value)}
       />
       <button type="submit" className="btn__add-task">
         add task
       </button>
-      {/* <Button
-        btnType="submit"
-        btnText="Button"
-        variant="contained"
-        margin
-        onClick={() => handleAddClick()}
-      /> */}
     </AppForm>
   );
 }

@@ -9,7 +9,7 @@ interface Props {
   handleCheckChange: (id: number) => void;
   handlerDelete: (id: number) => void;
   handleClr: () => void;
-  length: number;
+  length: number | null;
 }
 
 export default function index({
@@ -19,12 +19,12 @@ export default function index({
   handleClr,
   length,
 }: Props) {
-  console.log(length);
   return (
     <div>
       <ListHeaderStyle>
         <Title>
-          {(length = [] ? 0 : length)} task{length > 1 ? "s" : ""} remaining
+          {(length = [] ? 0 : length)} task{todos.length > 1 ? "s" : ""}{" "}
+          remaining
         </Title>
         <TextClrStyle onClick={handleClr}>Clear All</TextClrStyle>
       </ListHeaderStyle>

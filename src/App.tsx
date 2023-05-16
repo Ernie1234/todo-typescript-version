@@ -18,13 +18,13 @@ function App() {
   const [activedTask, setActivedTask] = useState<Todo[] | []>([]);
   const [complete, setComplete] = useState(false);
   const [completedTask, setCompletedTask] = useState<Todo[] | []>([]);
+  const [length, setLength] = useState<number | null>(null);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(todos));
+    // setLength(todos.length);
   }, [todos]);
 
-  let length: number;
-  length = todos.length;
   //FINDING ALL THE UNCOMPLETED TASK
   const remainingTask = (): Todo[] | [] => {
     return todos.filter((item) => item.isCompleted === false);
@@ -35,7 +35,7 @@ function App() {
     setComplete(false);
     setActive(false);
     const arr = remainingTask();
-    length = arr.length;
+    setLength(arr.length);
   };
   //HANDLE ACTIVE CLICK
   const handleActive = (): void => {
@@ -46,7 +46,7 @@ function App() {
       return item.isCompleted === false;
     });
     setActivedTask(arr);
-    length = arr.length;
+    setLength(arr.length);
   };
   //HANDLE COMPLETE CLICK
   const handleComplete = (): void => {
@@ -57,13 +57,13 @@ function App() {
       return item.isCompleted === true;
     });
     setCompletedTask(arr);
-    length = arr.length;
+    setLength(arr.length);
   };
   //HANDLE CLEAR-ALL FUNCTION
   const handleClr = (): void => {
     localStorage.clear();
     setTodos([]);
-    length = todos.length;
+    setLength(todos.length);
   };
 
   //RANDOM NUMBER GENERATOR FOR ID
@@ -98,7 +98,7 @@ function App() {
       <Wrapper>
         <Header />
         <AppInput
-          handleAddClick={() => handleAddClick}
+          handleAddClick={handleAddClick}
           input={input}
           setInput={setInput}
         />
